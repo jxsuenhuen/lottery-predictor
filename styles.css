@@ -1,0 +1,46 @@
+:root {
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", sans-serif;
+  color: #111827;
+  background: #f3f4f6;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: #f3f4f6; }
+.app-shell { max-width: 720px; margin: 0 auto; padding: 18px 14px 40px; }
+.hero { display:flex; justify-content:space-between; align-items:flex-start; gap:16px; padding: 8px 4px 16px; }
+.eyebrow { font-size:11px; font-weight:800; letter-spacing:1.8px; color:#6b7280; }
+h1 { margin:4px 0 6px; font-size:32px; line-height:1.05; }
+.hero p { margin:0; color:#6b7280; font-size:13px; }
+.status-pill { background:#e5e7eb; color:#374151; padding:8px 10px; border-radius:999px; font-size:12px; white-space:nowrap; }
+.card { background:#fff; border-radius:22px; padding:18px; margin:12px 0; box-shadow:0 4px 20px rgba(17,24,39,.05); }
+.primary-card { padding:24px 18px 20px; text-align:center; }
+.section-label, .card-title { font-weight:800; font-size:15px; }
+.section-label { color:#6b7280; }
+.main-number { font-size:48px; font-weight:900; letter-spacing:8px; margin:14px 0 8px; font-variant-numeric: tabular-nums; }
+.subtext, .hint, .warning, footer { color:#6b7280; font-size:13px; line-height:1.55; }
+.primary-btn, .secondary-btn, .ghost-btn { width:100%; border:0; border-radius:14px; padding:14px 16px; font-size:16px; font-weight:800; cursor:pointer; }
+.primary-btn { margin-top:16px; background:#111827; color:#fff; }
+.secondary-btn { background:#e5e7eb; color:#111827; margin-top:14px; }
+.ghost-btn { background:#f3f4f6; color:#111827; font-size:14px; }
+.ghost-btn.danger { color:#b91c1c; }
+.top-list { display:grid; gap:8px; margin-top:12px; }
+.top-item { display:flex; align-items:center; justify-content:space-between; background:#f9fafb; border-radius:14px; padding:12px 14px; }
+.rank { width:28px; color:#6b7280; font-weight:800; }
+.number { font-weight:900; letter-spacing:3px; }
+.score { color:#6b7280; font-size:12px; }
+.position-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:10px; margin-top:12px; }
+.position { background:#f9fafb; padding:12px 8px; border-radius:14px; text-align:center; }
+.position .pname { font-size:11px; color:#6b7280; }
+.position .digit { font-size:24px; font-weight:900; margin-top:4px; }
+.position .prob { font-size:11px; color:#6b7280; }
+.input-row { display:grid; grid-template-columns:1.2fr 1fr; gap:10px; }
+input { width:100%; border:1px solid #d1d5db; border-radius:12px; padding:12px; font-size:16px; background:#fff; }
+.number-inputs { display:grid; grid-template-columns:repeat(7,1fr); gap:7px; margin-top:10px; }
+.number-inputs input { text-align:center; font-size:22px; font-weight:800; padding:10px 0; }
+.message { min-height:20px; margin-top:8px; font-size:13px; }
+.metrics { display:grid; grid-template-columns:repeat(3,1fr); gap:8px; margin-top:12px; }
+.metric { background:#f9fafb; border-radius:14px; padding:12px; text-align:center; }
+.metric .v { font-size:20px; font-weight:900; }
+.metric .l { margin-top:4px; font-size:11px; color:#6b7280; }
+.data-actions { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:12px; }
+footer { text-align:center; padding:8px; }
+@media (max-width:480px) { h1{font-size:28px}.main-number{font-size:38px;letter-spacing:5px}.position-grid{grid-template-columns:repeat(4,1fr)} }

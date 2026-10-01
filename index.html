@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#111827" />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="apple-touch-icon" href="icon-192.png" />
+  <title>7位号码预测</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="app-shell">
+    <header class="hero">
+      <div>
+        <div class="eyebrow">LOTTERY PREDICTOR</div>
+        <h1>7位号码预测</h1>
+        <p id="dataSummary">正在加载历史数据…</p>
+      </div>
+      <div class="status-pill" id="statusPill">模型就绪</div>
+    </header>
+
+    <section class="card primary-card">
+      <div class="section-label">下一期统计候选</div>
+      <div class="main-number" id="mainNumber">--------</div>
+      <div class="subtext" id="mainMeta">点击预测开始计算</div>
+      <button id="predictBtn" class="primary-btn">预测下一期</button>
+    </section>
+
+    <section class="card">
+      <div class="card-title">Top 10 候选</div>
+      <div id="top10" class="top-list"></div>
+    </section>
+
+    <section class="card">
+      <div class="card-title">7 个位置的最高概率数字</div>
+      <div id="positionGrid" class="position-grid"></div>
+    </section>
+
+    <section class="card">
+      <div class="card-title">录入最新开奖结果</div>
+      <p class="hint">输入下一期实际开出的7位号码，保存后会自动加入本机历史数据。</p>
+      <div class="input-row">
+        <input id="issueInput" inputmode="numeric" maxlength="7" placeholder="期号，例如 2026152" />
+        <input id="dateInput" type="date" />
+      </div>
+      <div class="number-inputs" id="numberInputs"></div>
+      <button id="saveBtn" class="secondary-btn">保存开奖结果并更新模型</button>
+      <div class="message" id="saveMessage"></div>
+    </section>
+
+    <section class="card">
+      <div class="card-title">模型回测</div>
+      <div class="metrics" id="metrics"></div>
+      <p class="warning">提示：彩票开奖如果是独立随机过程，历史数据通常不能稳定预测下一期。这里显示的是统计模型候选，不代表保证中奖。</p>
+    </section>
+
+    <section class="card small-card">
+      <div class="card-title">数据管理</div>
+      <div class="data-actions">
+        <button id="exportBtn" class="ghost-btn">导出本机历史 CSV</button>
+        <button id="resetBtn" class="ghost-btn danger">恢复初始151期</button>
+      </div>
+    </section>
+
+    <footer>本工具仅用于统计实验与模型回测。</footer>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
