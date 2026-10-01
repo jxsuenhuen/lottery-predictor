@@ -3,11 +3,14 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <meta name="theme-color" content="#111827" />
+  <meta name="theme-color" content="#0f172a" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="7位预测" />
   <link rel="manifest" href="manifest.webmanifest" />
   <link rel="apple-touch-icon" href="icon-192.png" />
-  <title>7位号码预测</title>
   <link rel="stylesheet" href="styles.css" />
+  <title>7位号码预测</title>
 </head>
 <body>
   <main class="app-shell">
@@ -17,14 +20,15 @@
         <h1>7位号码预测</h1>
         <p id="dataSummary">正在加载历史数据…</p>
       </div>
-      <div class="status-pill" id="statusPill">模型就绪</div>
+      <div class="status-pill" id="statusPill">加载中</div>
     </header>
 
     <section class="card primary-card">
       <div class="section-label">下一期统计候选</div>
       <div class="main-number" id="mainNumber">--------</div>
       <div class="subtext" id="mainMeta">点击预测开始计算</div>
-      <button id="predictBtn" class="primary-btn" type="button">预测下一期</button><div class="tap-hint">点击后会显示“计算中…”，随后更新结果</div>
+      <button id="predictBtn" class="primary-btn" type="button">预测下一期</button>
+      <div class="tap-hint">点击后保存本次预测，下一期录入后会自动结算。</div>
     </section>
 
     <section class="card">
@@ -33,39 +37,43 @@
     </section>
 
     <section class="card">
-      <div class="card-title">7 个位置的最高概率数字</div>
-      <div id="positionGrid" class="position-grid"></div>
+      <div class="card-title">每一位 0–9 概率</div>
+      <p class="hint">这里显示模型对每一个位置的数字概率；每一行合计约为 100%。</p>
+      <div id="probabilities" class="prob-table"></div>
     </section>
 
     <section class="card">
       <div class="card-title">录入最新开奖结果</div>
-      <p class="hint">输入下一期实际开出的7位号码，保存后会自动加入本机历史数据。</p>
+      <p class="hint">录入实际开奖号码后，会自动加入本机历史数据，并结算对应期的预测。</p>
       <div class="input-row">
         <input id="issueInput" inputmode="numeric" maxlength="7" placeholder="期号，例如 2026152" />
         <input id="dateInput" type="date" />
       </div>
       <div class="number-inputs" id="numberInputs"></div>
-      <button id="saveBtn" class="secondary-btn">保存开奖结果并更新模型</button>
+      <button id="saveBtn" class="secondary-btn" type="button">保存开奖结果并更新模型</button>
       <div class="message" id="saveMessage"></div>
     </section>
 
     <section class="card">
-      <div class="card-title">模型回测</div>
+      <div class="card-title">真实预测回测</div>
+      <p class="hint">只统计你实际点击“预测下一期”后形成的预测；等对应期开奖号码录入后自动结算。</p>
       <div class="metrics" id="metrics"></div>
-      <p class="warning">提示：彩票开奖如果是独立随机过程，历史数据通常不能稳定预测下一期。这里显示的是统计模型候选，不代表保证中奖。</p>
+      <div id="hitDistribution" class="distribution"></div>
+      <div id="recentSettled" class="recent-list"></div>
+      <p class="warning">彩票开奖若为独立随机过程，历史数据通常不能稳定预测下一期。这里是统计实验结果，不代表保证中奖。</p>
     </section>
 
     <section class="card small-card">
       <div class="card-title">数据管理</div>
       <div class="data-actions">
-        <button id="exportBtn" class="ghost-btn">导出本机历史 CSV</button>
-        <button id="resetBtn" class="ghost-btn danger">恢复初始151期</button>
+        <button id="exportHistoryBtn" class="ghost-btn" type="button">导出历史 CSV</button>
+        <button id="exportPredBtn" class="ghost-btn" type="button">导出预测记录</button>
+        <button id="resetBtn" class="ghost-btn danger" type="button">恢复初始151期</button>
       </div>
     </section>
 
-    <footer>本工具仅用于统计实验与模型回测。</footer>
+    <footer>本工具仅用于统计实验与模型回测。数据保存在当前设备浏览器中。</footer>
   </main>
-
-  <script src="app.js"></script>
+  <script src="app.js?v=4"></script>
 </body>
 </html>

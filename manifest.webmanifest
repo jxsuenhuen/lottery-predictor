@@ -3,8 +3,8 @@
   "short_name": "7位预测",
   "start_url": "./",
   "display": "standalone",
-  "background_color": "#f3f4f6",
-  "theme_color": "#111827",
+  "background_color": "#f1f5f9",
+  "theme_color": "#0f172a",
   "lang": "zh-CN",
   "icons": [
     {"src":"icon-192.png","sizes":"192x192","type":"image/png"},
